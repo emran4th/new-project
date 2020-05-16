@@ -38,6 +38,7 @@
                             <li><a href="{{route('post')}}">Write Post</a></li>
                             <li><a href="{{route('AddCategory')}}">Add Category</a></li>
                             <li><a href="{{route('AllCategory')}}">All Category</a></li>
+                            <li><a href="{{url('view/category/{id}')}}">View Category</a></li>
 
                         </ul>
                     </li>

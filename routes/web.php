@@ -26,6 +26,7 @@ Route::get('write/post','customController@post')->name('post');
 Route::get('add/category','customController@AddCategory')->name('AddCategory');
 Route::post('store/category','customController@StoreCategory')->name('StoreCategory');
 Route::get('all/category','customController@AllCategory')->name('AllCategory');
+Route::get('view/category/{id}','customController@ViewCategory')->name('ViewCategory');
 
 
 

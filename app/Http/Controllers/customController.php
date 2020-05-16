@@ -27,13 +27,15 @@ class customController extends Controller
         return view('user.post.addcategory');
     }
     public function AllCategory(){
-        return view('user.post.AllCategory');
+        $category=DB::table('categories')->get();
+        return view('user.post.AllCategory',compact('category'));
+//        return response()->json($category);
     }
     public function StoreCategory(Request $request)
     {
        $this->validate($request,[
         'catname'=>'required|min:6',
-            'slugname'=>'required|min3',
+            'slugname'=>'required|min:3',
 
         ]);
 
@@ -48,7 +50,7 @@ class customController extends Controller
 
 //        Session()->flash('success_done','successfully inserted');
 //        $request->Session()->flash('notif', 'successfully added');
-        Alert::success('Toast Message', 'Toast Type');
+        Alert::success('Successfully Inserted', 'Category');
 //        Alert::question('Question Title', 'Question Message');
 
 
@@ -56,6 +58,15 @@ class customController extends Controller
 
         return redirect()->route('AddCategory');
 
+
+
+    }
+    public function ViewCategory($id)
+
+    {
+        $category=DB::table('categories')->where('id',$id)->first();
+        return view('user.post.viewCategory')->with('emran',$category);
+//        return response()->json($category);
 
 
     }

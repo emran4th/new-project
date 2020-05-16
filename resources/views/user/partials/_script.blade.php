@@ -32,3 +32,7 @@
 <script src="{{asset('js/template js/starrr/dist/starrr.js')}}"></script>
 <!-- Custom Theme Scripts -->
 <script src="{{asset('js/custom.min.js')}}"></script>
+
+{{--cdn--}}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+@yield('script')
